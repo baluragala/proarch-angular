@@ -1,0 +1,16 @@
+<h3>Products</h3>
+<pro-add></pro-add>
+<p>Cart: {{ cart.length }}</p>
+<pro-product-list-item
+  *ngFor="
+    let product of products;
+    let i = index;
+    let e = even;
+    let o = odd;
+    let f = first;
+    let l = last
+  "
+  [extras]="{ index: i, even: e, odd: o, first: f, last: l }"
+  [product]="product"
+  (addToCart)="handleAddToCart($event)"
+></pro-product-list-item>

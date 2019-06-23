@@ -1,0 +1,8 @@
+<pro-header
+  [message]="title.toUpperCase()"
+  (headerClicked)="onHeaderClicked($event)"
+></pro-header>
+<pro-product-list></pro-product-list>
+<pro-footer></pro-footer>
+
+<input type="button" [value]="title" (click)="handleClick($event)" />

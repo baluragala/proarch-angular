@@ -1,0 +1,22 @@
+<form #f="ngForm" (submit)="handleSubmit(f)">
+  <input
+    type="text"
+    name="title"
+    [(ngModel)]="title"
+    required
+    minlength="5"
+    maxlength="30"
+    #titleRef="ngModel"
+  />
+
+  <pre>
+      {{ titleRef.touched }}
+    </pre
+  >
+
+  <pre>
+    {{ titleRef.errors | json }}
+  </pre>
+
+  <button [disabled]="!f.valid">Save</button>
+</form>

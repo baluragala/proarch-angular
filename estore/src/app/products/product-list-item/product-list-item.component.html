@@ -1,0 +1,19 @@
+<div [ngClass]="{ stock: product.stock > 0, nostock: product.stock == 0 }">
+  <pre>
+
+    {{ product | json }}
+  </pre>
+  <h2 [ngStyle]="getTitleStyle()">
+    {{ extras.index + 1 }} - {{ product.title | uppercase }}
+  </h2>
+  <h4>{{ product.price | currency: "INR" }}</h4>
+  <h3>{{ product.stock | units: "pieces" | uppercase }}</h3>
+  <pro-feature [feature]="product.features[0]"></pro-feature>
+  <button *ngIf="product.stock > 0; else notify" (click)="handleClick()">
+    ADD TO CART
+  </button>
+</div>
+
+<ng-template #notify>
+  <button>NOTIFY</button>
+</ng-template>
