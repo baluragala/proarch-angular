@@ -9,6 +9,10 @@
     #titleRef="ngModel"
   />
 
+  <div ngModelGroup="name">
+    <input type="text" name="first" [(ngModel)]="name.first" />
+    <input type="text" name="first" [(ngModel)]="name.last" />
+  </div>
   <pre>
       {{ titleRef.touched }}
     </pre

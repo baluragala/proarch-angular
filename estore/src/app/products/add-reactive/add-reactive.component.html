@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <input type="text" formControlName="title" />
+  {{ form.controls.title.errors | json }}
+  <p *ngIf="form.controls.title.errors?.required">Title is required</p>
+  <p *ngIf="form.controls.title.errors?.minlength">Atleast 5 chars required</p>
+  <input type="number" formControlName="price" />
+  <div formGroupName="feature">
+    <input type="text" formControlName="name" />
+    <input type="text" formControlName="desc" />
+  </div>
+</form>

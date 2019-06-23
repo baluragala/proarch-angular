@@ -2,7 +2,7 @@
   [message]="title.toUpperCase()"
   (headerClicked)="onHeaderClicked($event)"
 ></pro-header>
-<pro-product-list></pro-product-list>
-<pro-footer></pro-footer>
+<pro-nav></pro-nav>
+<router-outlet></router-outlet>
 
-<input type="button" [value]="title" (click)="handleClick($event)" />
+<pro-footer></pro-footer>

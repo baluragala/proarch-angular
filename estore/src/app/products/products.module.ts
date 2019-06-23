@@ -5,13 +5,22 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import { FeatureComponent } from './feature/feature.component';
 import { UnitsPipe } from './units.pipe';
 import { AddComponent } from './add/add.component';
-import { FormsModule } from "@angular/forms"
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AddReactiveComponent } from './add-reactive/add-reactive.component'
+import { RouterModule } from '@angular/router';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
-  declarations: [ProductListComponent, ProductListItemComponent, FeatureComponent, UnitsPipe, AddComponent],
+  declarations: [ProductListComponent, ProductListItemComponent, FeatureComponent, UnitsPipe, AddComponent, AddReactiveComponent, ProductDetailComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild([
+      { path: 'list', component: ProductListComponent },
+      { path: 'add', component: AddReactiveComponent },
+      { path: 'detail/:id', component: ProductDetailComponent }
+    ])
   ],
   exports: [ProductListComponent]
 })

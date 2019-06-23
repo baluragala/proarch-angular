@@ -4,7 +4,11 @@
     {{ product | json }}
   </pre>
   <h2 [ngStyle]="getTitleStyle()">
-    {{ extras.index + 1 }} - {{ product.title | uppercase }}
+    <a
+      [routerLink]="['/detail', product.id]"
+      [queryParams]="{ title: product.title, price: product.price }"
+      >{{ extras.index + 1 }} - {{ product.title | uppercase }}</a
+    >
   </h2>
   <h4>{{ product.price | currency: "INR" }}</h4>
   <h3>{{ product.stock | units: "pieces" | uppercase }}</h3>

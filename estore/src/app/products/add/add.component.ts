@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AddComponent implements OnInit {
 
+  name: { first: string, last: string } = { first: '', last: '' }
   constructor() { }
 
   ngOnInit() {
